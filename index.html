@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lewis ID Lab</title>
+  <meta name="description" content="Lewis Infectious Diseases Laboratory, Department of Molecular Medicine, University of Padua. Research code and data in infectious diseases and clinical pharmacology.">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="icon" href="icon.png" type="image/png">
+  <style>
+    :root {
+      --bg: #f7f9fb;
+      --surface: #ffffff;
+      --text: #10202c;
+      --muted: #52616d;
+      --border: #dde4ea;
+      --accent: #0f9488;
+      --accent-2: #ea7a17;
+      --hero: #0f2a3d;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0a1822;
+        --surface: #10232f;
+        --text: #e6edf2;
+        --muted: #9aabb8;
+        --border: #1f3747;
+        --accent: #2dd4bf;
+        --accent-2: #fbbf24;
+        --hero: #07131b;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    a { color: var(--accent); }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      background: linear-gradient(135deg, #12344d, var(--hero));
+      color: #fff;
+      padding: 56px 0 48px;
+    }
+    header .wrap { display: flex; gap: 28px; align-items: center; }
+    header img { width: 112px; height: 112px; border-radius: 22px; flex-shrink: 0; }
+    header h1 { margin: 0 0 6px; font-size: 2rem; line-height: 1.2; }
+    header p { margin: 0; color: #b8cad6; }
+    @media (max-width: 560px) {
+      header .wrap { flex-direction: column; align-items: flex-start; }
+      header h1 { font-size: 1.6rem; }
+    }
+
+    nav { border-bottom: 1px solid var(--border); background: var(--surface); }
+    nav .wrap { display: flex; gap: 22px; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; }
+    nav a { color: var(--muted); text-decoration: none; font-weight: 500; }
+    nav a:hover { color: var(--accent); }
+
+    section { padding: 40px 0 8px; }
+    h2 { font-size: 1.35rem; margin: 0 0 14px; }
+    h2::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 10px;
+                 background: var(--accent-2); border-radius: 50%; vertical-align: middle; }
+
+    .areas { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 1.02rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    #repos { display: grid; gap: 12px; }
+    #repos a.card { display: block; text-decoration: none; color: inherit; }
+    #repos a.card:hover { border-color: var(--accent); }
+    .meta { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
+    .empty { color: var(--muted); font-style: italic; }
+
+    footer { margin-top: 48px; padding: 28px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <img src="icon.png" alt="Lewis ID Lab logo">
+      <div>
+        <h1>Lewis Infectious Diseases Laboratory</h1>
+        <p>Department of Molecular Medicine · University of Padua, Italy</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="wrap">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#code">Code &amp; data</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        We work at the intersection of infectious diseases and clinical pharmacology,
+        with the goal of improving how anti-infective drugs are selected, dosed, and monitored.
+        This site collects the open code, data, and analysis pipelines behind our research.
+      </p>
+      <p>
+        The lab is led by <a href="https://www.russlewisid.com">Russell E. Lewis</a>,
+        Associate Professor of Infectious Diseases in the Department of Molecular Medicine
+        at the University of Padua.
+      </p>
+    </section>
+
+    <section id="research">
+      <h2>Research areas</h2>
+      <div class="areas">
+        <div class="card">
+          <h3>Antimicrobial PK/PD</h3>
+          <p>Pharmacokinetic and pharmacodynamic modelling to support rational dosing of anti-infectives.</p>
+        </div>
+        <div class="card">
+          <h3>Clinical infectious diseases</h3>
+          <p>Clinical studies of diagnosis, treatment, and outcomes in serious infections.</p>
+        </div>
+        <div class="card">
+          <h3>Reproducible research</h3>
+          <p>Open, reusable code and data so our analyses can be checked and built upon.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="code">
+      <h2>Code &amp; data</h2>
+      <div id="repos"><p class="empty">Loading repositories…</p></div>
+      <p class="meta">All projects: <a href="https://github.com/lewis-id-lab">github.com/lewis-id-lab</a></p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:russelledward.lewis@unipd.it">russelledward.lewis@unipd.it</a><br>
+        Personal site: <a href="https://www.russlewisid.com">russlewisid.com</a><br>
+        GitHub: <a href="https://github.com/lewis-id-lab">@lewis-id-lab</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year"></span> Lewis Infectious Diseases Laboratory · University of Padua</div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // List the org's public repos automatically, newest activity first.
+    (async () => {
+      const box = document.getElementById("repos");
+      const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+      try {
+        const res = await fetch("https://api.github.com/orgs/lewis-id-lab/repos?per_page=100&sort=pushed");
+        if (!res.ok) throw new Error(res.status);
+        const repos = (await res.json())
+          .filter(r => !r.fork && !r.archived && r.name !== "lewis-id-lab.github.io" && r.name !== ".github");
+        if (!repos.length) {
+          box.innerHTML = '<p class="empty">Public projects will appear here as they are released.</p>';
+          return;
+        }
+        box.innerHTML = repos.map(r => `
+          <a class="card" href="${esc(r.html_url)}">
+            <h3>${esc(r.name)}</h3>
+            <p>${esc(r.description || "No description yet.")}</p>
+            <div class="meta">${r.language ? esc(r.language) + " · " : ""}updated ${new Date(r.pushed_at).toLocaleDateString()}</div>
+          </a>`).join("");
+      } catch {
+        box.innerHTML = '<p class="empty">See all projects on <a href="https://github.com/lewis-id-lab">GitHub</a>.</p>';
+      }
+    })();
+  </script>
+</body>
+</html>
