@@ -71,9 +71,11 @@
     .card h3 { margin: 0 0 6px; font-size: 1.02rem; }
     .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
 
-    #repos { display: grid; gap: 12px; }
-    #repos a.card { display: block; text-decoration: none; color: inherit; }
-    #repos a.card:hover { border-color: var(--accent); }
+    #repos, #sites { display: grid; gap: 12px; }
+    #sites { margin-bottom: 12px; }
+    #repos a.card, #sites a.card { display: block; text-decoration: none; color: inherit; }
+    #repos a.card:hover, #sites a.card:hover { border-color: var(--accent); }
+    .subhead { margin: 18px 0 10px; font-size: 1rem; color: var(--muted); font-weight: 600; }
     .meta { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
     .empty { color: var(--muted); font-style: italic; }
 
@@ -135,6 +137,15 @@
 
     <section id="code">
       <h2>Code &amp; data</h2>
+      <h3 class="subhead">Analysis websites</h3>
+      <div id="sites">
+        <a class="card" href="https://lewis-id-lab.github.io/PROSE/">
+          <h3>PROSE: host genetics and invasive mould disease</h3>
+          <p>Simulation study of whether host genetic variants would change clinical decisions made with a validated risk score. Evidence mapping, decision curves and the pre-specified decisions (work in progress).</p>
+          <div class="meta">lewis-id-lab.github.io/PROSE · code in the <a href="https://github.com/lewis-id-lab/PROSE">PROSE repository</a></div>
+        </a>
+      </div>
+      <h3 class="subhead">Repositories</h3>
       <div id="repos"><p class="empty">Loading repositories…</p></div>
       <p class="meta">All projects: <a href="https://github.com/lewis-id-lab">github.com/lewis-id-lab</a></p>
     </section>
